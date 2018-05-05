@@ -19,4 +19,4 @@ wholesale_prices_2017_lubridated %>% mutate(Trade.month = as.factor(Trade.month)
 wholesale_prices_2017_lubridated %>% group_by(Price.hub) %>% summarize (Average_price = mean(Wtd.avg.price...MWh)) %>% ggplot(aes(x = Price.hub, y = Average_price)) + geom_col()
 #There were more than 5,000 total trades in the Northwest in the summer months, and that trade volume differential holds throughout the year
 #The Northwest also has the highest "spread" and lowest weighted average price (around $25). Preliminary observations indicated that regions with
-#more trades and more volume also have lower prices. However, there are many other factors at play, including cheap hydropower available 
+#more trades and more volume also have lower prices. However, there are many other factors at play, including the cheap hydropower available in the Northwest
