@@ -2,7 +2,7 @@
 These are some basic R queries meant to gain insights into the wholesale electricity market across the country
 #Install the necssary R packages - dplyr, magrittr, lubridate, readr, readxl
 install.packages("ggplot2")
-#Import Energy Information Administration's 2017 spreadsheet of wholesale electricity prices
+#Import the Energy Information Administration's 2017 spreadsheet of wholesale electricity prices
 wholesale_prices_2017 <- read.csv("/Users/stevenshoemaker/Desktop/ice_electric-2017final.csv")
 #Change the "Trade" Column into a usable date class using lubridate, create new "Trade.Month" column
 wholesale_prices_2017_lubridated <- wholesale_prices_2017 %>% mutate(Trade.date = mdy(Trade.date))%>% mutate(Trade.month = months(Trade.date))
