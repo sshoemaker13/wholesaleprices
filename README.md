@@ -15,7 +15,7 @@ wholesale_prices_2017_lubridated %>% mutate(Spread = High.price...MWh - Low.pric
 #The next question: Can we visual the relationshop between the month and the number of counterparties?
 wholesale_prices_2017_lubridated %>% mutate(Trade.month = as.factor(Trade.month)) %>% group_by(Trade.month) %>% summarize(average_parties = mean(Number.of.counterparties)) %>% ggplot(aes(x =Trade.month, y = average_parties )) + geom_line() + geom_point()
 #July has the largest average number of counterparties and June has the highest number of trades. Clearly there is more action in the summer
-#The next line visuals the average weighted price by region
+#The next line visualizes the average weighted price by region
 wholesale_prices_2017_lubridated %>% group_by(Price.hub) %>% summarize (Average_price = mean(Wtd.avg.price...MWh)) %>% ggplot(aes(x = Price.hub, y = Average_price)) + geom_col()
 #There were more than 5,000 total trades in the Northwest in the summer months, and that trade volume differential holds throughout the year
 #The Northwest also has the highest "spread" and lowest weighted average price (around $25). Preliminary observations indicated that regions with
