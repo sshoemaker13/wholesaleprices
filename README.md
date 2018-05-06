@@ -12,7 +12,7 @@ wholesale_prices_2017_lubridated %>% group_by(Trade.month) %>% summarize(monthly
 #The next question is: What is the region that has the highest average difference between the High price per MWh and the low price (spread)?
 wholesale_prices_2017_lubridated %>% mutate(Spread = High.price...MWh - Low.price...MWh) %>% group_by(Price.hub) %>% summarize(average_spread = mean(Spread)) %>% arrange(desc(average_spread)) 
 #Mid C Peak, which is the Price hub that represents the Northwest, had the largest price spread
-#The next question: Can we visual the relationshop between the month and the number of counterparties?
+#The next question: Can we visual the relationship between the month and the number of counterparties?
 wholesale_prices_2017_lubridated %>% mutate(Trade.month = as.factor(Trade.month)) %>% group_by(Trade.month) %>% summarize(average_parties = mean(Number.of.counterparties)) %>% ggplot(aes(x =Trade.month, y = average_parties )) + geom_line() + geom_point()
 #July has the largest average number of counterparties and June has the highest number of trades. Clearly there is more action in the summer
 #The next line visualizes the average weighted price by region
